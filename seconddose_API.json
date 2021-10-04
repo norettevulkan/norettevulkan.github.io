@@ -51,7 +51,7 @@
         "field": "areaName",
         "type": "nominal",
         "scale": {"scheme": "set1"},
-        "title": "LEGEND TITLE",
+        "title": "Cities",
         "legend": {
           "orient": "top-left", 
           "fillColor": "#3fe7bd00"}
