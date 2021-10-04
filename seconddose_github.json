@@ -1,0 +1,60 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    
+    "title": {
+      "text": "Vaccinated with 2nd dose",
+      "subtitle":"This graph is made using my Github repository",
+      "subtitleFontStyle":"italic",
+      "subtitleFontSize":10,
+      "anchor": "start",
+      "color": "darkolivegreen"
+    },
+    
+     "data": {
+      "url": "https://raw.githubusercontent.com/norettevulkan/norettevulkan.github.io/main/ltla_2021-10-03%20(1).csv",
+      "format": {"type": "csv"}
+    },
+  
+     "transform":[
+        
+        {"filter": {
+          "field": "areaName", 
+          "oneOf": ["Bristol, City of", "Oxford", "Swindon"]}
+          }
+  
+  
+      ],
+    
+    
+    "height": 300,
+    "width": 310,
+     
+    "mark": {"type": "line", "point": false},
+   
+    "encoding": {
+  
+      "x": {
+        "field": "date",
+        "type": "temporal",
+        "title": null,
+        "axis": {"grid": false}
+      },
+  
+      "y": {
+        "field": "cumPeopleVaccinatedSecondDoseByVaccinationDate",
+        "type": "quantitative",
+        "title": null,
+        "axis": {"grid": false}
+      },
+  
+      "color": {
+        "field": "areaName",
+        "type": "nominal",
+        "scale": {"scheme": "set1"},
+        "title": "LEGEND TITLE",
+        "legend": {
+          "orient": "top-left", 
+          "fillColor": "#3fe7bd00"}
+      }
+  }
+  }
