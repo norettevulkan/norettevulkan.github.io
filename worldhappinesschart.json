@@ -42,6 +42,7 @@
       "field": "Country",
       "type": "nominal",
       "scale": {"scheme": "yellowgreenblue"},
+      "sort":"",
       "title": null,
       "legend": null
     }
