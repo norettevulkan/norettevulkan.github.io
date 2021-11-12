@@ -1,39 +1,27 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-
-    "data": {
-       "url": "https://api.allorigins.win/raw?url=https://api.ons.gov.uk/timeseries/mgrz/dataset/lms/data",
-       "format": {
-           "type":"json",
-           "property": "years"}},
-
-
-    "title": {
-        "text": "Number of people in employment (16+)",
-        "subtitle": "United Kingdom (000's) seasonally adjusted",
-        "subtitleFontStyle":"italic",
-        "subtitleFontSize":10,
-        "anchor": "start",
-        "color": "black"},
-
-    "width":300,
-    "height":300,
-
-    "mark":{
-        "type": "line",
-        "color":"slateblue",
-        "strokeWidth":2,
-        "opacity":1},
- 
-
-    "encoding": {
-      "x": {
-          "field": "date",
-          "type": "temporal",
-          "title":null},
-      "y": {
-          "field": "value",
-          "type": "quantitative",
-          "title":null}
-    }
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://api.allorigins.win/raw?url=https://api.ons.gov.uk/timeseries/abmi/dataset/bb/data",
+    "format": {"type": "json", "property": "years"}
+  },
+  "title": {
+    "text": "UK Gross Domestic Product",
+    "subtitle": "Chained volume measures: seasonally adjusted",
+    "subtitleFontStyle": "italic",
+    "subtitleFontSize": 10,
+    "anchor": "start",
+    "color": "black"
+  },
+  "width": 300,
+  "height": 300,
+  "mark": {
+    "type": "line",
+    "color": "slateblue",
+    "strokeWidth": 2,
+    "opacity": 1
+  },
+  "encoding": {
+    "x": {"field": "date", "type": "temporal", "title": null},
+    "y": {"field": "value", "type": "quantitative", "title": "£m"}
+  }
 }
