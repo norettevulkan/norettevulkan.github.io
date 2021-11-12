@@ -29,7 +29,8 @@
       "field": "Country",
       "type": "nominal",
       "title": null,
-      "axis": {"grid": false}
+      "axis": {"grid": false},
+      "sort":""
     },
     "y": {
       "field": "Happiness 2021",
