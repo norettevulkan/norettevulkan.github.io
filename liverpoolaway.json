@@ -23,8 +23,8 @@
  
   "mark": "bar",
   "encoding": {
-    "x": {"field": "match_start", "type": "temporal", "title": null},
-    "y": {"field": "stats.away_score", "type": "quantitative","title":null},
+    "x": {"field": "match_start", "type": "temporal", "title": null, "axis": {"grid": false}},
+    "y": {"field": "stats.away_score", "type": "quantitative", "axis": {"grid": false},"title":null},
     "color": {"value": "red"}
   }
 }
