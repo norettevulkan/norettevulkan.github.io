@@ -1,0 +1,48 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": {
+      "text": "Jamaica happiness rating",
+      "subtitle": "This graph uses the fold function",
+      "subtitleFontStyle": "italic",
+      "subtitleFontSize": 10,
+      "anchor": "start",
+      "color": "black"
+    },
+    "data": {
+      "url": "https://raw.githubusercontent.com/norettevulkan/norettevulkan.github.io/main/world%20happiness.csv",
+      "format": {"type": "csv"}
+    },
+    "transform": [
+         {"filter": {
+          "field": "Country",
+          "oneOf": ["Jamaica"]
+        }
+      },
+  {"fold": ["Happiness 2020","Happiness 2021"],"as": ["happiness","value"]}
+    ],
+  
+    "height": 300,
+    "width": 310,
+    "mark": {"type": "bar", "point": false},
+    "encoding": {
+      "x": {
+        "field": "happiness",
+        "type": "nominal",
+        "title": null,
+        "axis": {"grid": false}
+      },
+      "y": {
+        "field": "value",
+        "type": "quantitative",
+        "title": null,
+        "axis": {"grid": false}
+  
+      },
+      "color": {
+        "type": "nominal",
+        "scale": {"scheme": "yellowgreenblue"},
+        "title": null,
+        "legend": null
+      }
+    }
+  }

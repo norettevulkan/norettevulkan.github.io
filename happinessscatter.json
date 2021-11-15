@@ -1,0 +1,23 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "A scatterplot showing horsepower and miles per gallons for various cars.",
+   "title": {
+    "text": "Happiness and population",
+    "subtitleFontStyle": "italic",
+    "subtitleFontSize": 10,
+    "anchor": "start",
+    "color": "black"
+  },
+  "data": {
+    "url": "https://raw.githubusercontent.com/norettevulkan/norettevulkan.github.io/main/world%20happiness.csv",
+    "format": {"type": "csv"}
+  },
+  "transform": [
+{"fold": ["Happiness 2020","Happiness 2021"],"as": ["happiness","value"]}
+  ],
+  "mark": "point",
+  "encoding": {
+    "x": {"field": "Happiness 2021", "type": "quantitative"},
+    "y": {"field": "2021 Population", "type": "quantitative"}
+  }
+}
