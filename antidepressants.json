@@ -1,0 +1,42 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Antidepressant rates (2017)",
+    "subtitle": "The defined daily dosage per 1 000 inhabitants per day, from OECD",
+    "subtitleFontStyle": "italic",
+    "subtitleFontSize": 10,
+    "anchor": "start",
+    "color": "black"
+  },
+  "data": {
+    "url": "https://raw.githubusercontent.com/norettevulkan/norettevulkan.github.io/main/antidepressantsagain.csv",
+    "format": {"type": "csv"}
+  },
+
+  "height": 300,
+  "width": 310,
+  "mark": {"type": "bar", "point": false},
+  "encoding": {
+    "x": {
+      "field": "Country",
+      "type": "nominal",
+      "title": null,
+      "axis": {"grid": false},
+      "sort": "-y"
+    },
+    "y": {
+      "field": "Value",
+      "type": "quantitative",
+      "title": null,
+      "axis": {"grid": false}
+    },
+    "color": {
+      "field": "Country",
+      "type": "nominal",
+       "scale": {"scheme": "yellowgreenblue"},
+      "sort": "y",
+      "title": null,
+      "legend": null
+    }
+  }
+}
