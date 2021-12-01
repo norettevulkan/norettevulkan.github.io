@@ -1,0 +1,41 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Critical care beds per 100,000 of population (2012)",
+    "subtitle": "Data scraped from 'The variability of critical care bed numbers in Europe', Rhodes et al.",
+    "subtitleFontStyle": "italic",
+    "subtitleFontSize": 10,
+    "anchor": "start",
+    "color": "black"
+  },
+  "data": {
+    "url": "https://raw.githubusercontent.com/norettevulkan/norettevulkan.github.io/main/criticalcarebeds.csv",
+    "format": {"type": "csv"}
+  },
+  "height": 300,
+  "width": 310,
+  "mark": {"type": "bar", "point": false},
+  "encoding": {
+    "x": {
+      "field": "Unnamed: 0",
+      "type": "nominal",
+      "title": null,
+      "axis": {"grid": false},
+      "sort": "-y"
+    },
+    "y": {
+      "field": "ICU and IMCU beds/100,000 population",
+      "type": "quantitative",
+      "title": null,
+      "axis": {"grid": false}
+    },
+    "color": {
+      "field": "Unnamed: 0",
+      "type": "nominal",
+      "scale": {"scheme": "inferno"},
+      "sort": "-y",
+      "title": null,
+      "legend": null
+    }
+  }
+}
