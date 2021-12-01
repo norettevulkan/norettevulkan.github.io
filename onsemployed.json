@@ -21,7 +21,7 @@
     "opacity": 1
   },
   "encoding": {
-    "x": {"field": "date", "type": "temporal", "title": null},
-    "y": {"field": "value", "type": "quantitative", "title": null}
+    "x": {"field": "date", "type": "temporal", "title": null,"axis": {"grid": false}},
+    "y": {"field": "value", "type": "quantitative", "title": null,"axis": {"grid": false}}
   }
 }
