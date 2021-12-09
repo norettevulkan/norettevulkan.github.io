@@ -32,10 +32,41 @@
     "color": {
       "field": "Unnamed: 0",
       "type": "nominal",
-      "scale": {"scheme": "inferno"},
-      "sort": "-y",
-      "title": null,
+      "scale": {
+        "range": [
+          "#66a1cf",
+          "#66a1cf",
+          "#66a1cf",
+          "#66a1cf",
+          "#66a1cf",
+          "#66a1cf",
+          "#66a1cf",
+          "#66a1cf",
+          "#66a1cf",
+          "#66a1cf",
+          "#66a1cf",
+          "#66a1cf",
+          "#66a1cf",
+          "#66a1cf",
+          "#66a1cf",
+          "#66a1cf",
+          "#66a1cf",
+          "#66a1cf",
+          "#66a1cf",
+          "#66a1cf",
+          "#66a1cf",
+          "#66alcf",
+          "#66a1cf",
+          "#66a1cf",
+          "#66a1cf",
+          "#66alcf",
+          "#66a1cf",
+          "#66a1cf",
+          "#66alcf",
+          "#66a1cf",
+          "red"       ]
+      },
       "legend": null
-    }
   }
+}
 }
