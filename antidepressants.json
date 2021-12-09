@@ -12,7 +12,6 @@
     "url": "https://raw.githubusercontent.com/norettevulkan/norettevulkan.github.io/main/antidepressantsagain.csv",
     "format": {"type": "csv"}
   },
-
   "height": 300,
   "width": 310,
   "mark": {"type": "bar", "point": false},
@@ -33,9 +32,34 @@
     "color": {
       "field": "Country",
       "type": "nominal",
-       "scale": {"scheme": "yellowgreenblue"},
-      "sort": "y",
-      "title": null,
+      "scale": {
+        "range": [
+          "#66a1cf",
+          "#66a1cf",
+          "#66a1cf",
+          "#66a1cf",
+          "#66a1cf",
+          "#66a1cf",
+          "#66a1cf",
+          "red",
+          "#66a1cf",
+          "#red",
+          "#66a1cf",
+          "#66a1cf",
+          "#66a1cf",
+          "red",
+          "#66a1cf",
+          "#66a1cf",
+          "#66a1cf",
+          "#66a1cf",
+          "#66a1cf",
+          "#66a1cf",
+          "red",
+          "#66alcf",
+          "#66a1cf",
+          "#66a1cf"
+        ]
+      },
       "legend": null
     }
   }
