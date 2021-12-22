@@ -1,0 +1,20 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 500,
+  "height": 300,
+  "data": {
+    "url": "https://raw.githubusercontent.com/norettevulkan/norettevulkan.github.io/main/topojson_export_europe.json",
+    "format": {"type": "topojson", "feature": "continent_Europe_subunits"}
+  },
+  "projection": {"type": "naturalEarth1"},
+  "mark": "geoshape",
+  "encoding": {
+    "color": {
+      "field": "properties.epi",
+      "type": "quantitative",
+      "scale": {"scheme": "inferno"},
+      "sort": "descending",
+      "title": "Happiness Score"
+    }
+  }
+}
