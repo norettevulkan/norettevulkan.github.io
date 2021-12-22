@@ -1,0 +1,34 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Stop and Search in Cowley by ethnicity",
+    "anchor": "start",
+    "color": "black",
+    "subtitle": "Stop and Search in Cowley, Oxford (July 2020). Source: Police API.",
+    "subtitleFontStyle": "italic",
+    "subtitleFontSize": 10,
+    "subtitleColor": "black"
+  },
+  "data": {
+    "url": "https://data.police.uk/api/stops-street?lat=51.7375&lng=-1.20429&date=2021-07"
+  },
+  "transform": [{"calculate": "1", "as": "stops"}],
+  "width": 300,
+  "height": 300,
+  "mark": {"type": "bar", "point": false},
+  "encoding": {
+    "x":{
+      "field":"officer_defined_ethnicity",
+      "type":"nominal","title":null},
+      "y":{
+        "aggregate": "sum", "field": "stops","type":"quantitative","title":"No. of stop and searches"
+      },
+      "color":{
+       "field": "officer_defined_ethnicity",
+      "type": "nominal",
+      "scale": {"scheme": "yellowgreenblue"},
+      "title": null,
+      "legend": null
+      }
+  }
+}
