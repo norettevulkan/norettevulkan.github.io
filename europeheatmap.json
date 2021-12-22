@@ -12,8 +12,8 @@
     "color": {
       "field": "properties.epi",
       "type": "quantitative",
-      "scale": {"scheme": "inferno"},
-      "sort": "descending",
+      "scale": {"scheme": "yellowgreenblue"},
+      "sort": "ascending",
       "title": "Happiness Score"
     }
   }
