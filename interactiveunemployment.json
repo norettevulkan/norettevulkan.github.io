@@ -1,0 +1,78 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+
+
+    "title": {
+    "text": "UK employment rate (%) - since 1975",
+    "subtitle": "16+ seasonally adjusted, Source: ONS",
+    "subtitleFontStyle":"italic",
+    "subtitleFontSize":10,
+    "anchor": "start",
+    "color": "black"
+  },
+
+
+    "width":300,
+    "height":300,
+
+    "data": {
+        "name":"myData",
+        "url": "https://raw.githubusercontent.com/norettevulkan/norettevulkan.github.io/main/data_ONS-lf24.json",
+        "format": {
+          "type":"json",
+          "property": "years"
+        }},
+  
+
+    "mark":{
+      "type": "line",
+      "color":"blueviolet",
+      "strokeWidth":2,
+      "opacity":1
+    },
+
+    "transform": [
+      {"filter": "datum.year>minYear"},
+      {"filter": "datum.year<maxYear"}
+    ],
+
+    "params": [    
+      {"name":"minYear", "value":1975,
+         "bind":{
+           "input": "range",
+           "min": 1975, 
+           "max": 2021, 
+           "step": 1,
+           "name": "Start year:"}
+      },
+
+      {"name":"maxYear", "value":2021,
+         "bind":{
+           "input": "range",
+           "min": 1975, 
+           "max": 2021, 
+           "step": 1,
+           "name": "End year:"}
+      }
+    ],
+
+
+    "encoding": {
+      
+      "x": {
+        "field": "date",
+        "type": "temporal",
+        "title":null
+        },
+  
+      "y": {
+        "field": "value",                
+        "type": "quantitative",
+        "title":"%",
+        "scale":{
+          "domain":{
+            "data": "myData", 
+            "field": "value"}}
+        }
+  }
+}
