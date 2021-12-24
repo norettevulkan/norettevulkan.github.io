@@ -49,7 +49,7 @@
       },
   
       "tooltip": [
-        {"field": "Country name", "type": "ordinal", "title": "Location"},
+        {"field": "Country name", "type": "ordinal", "title": "Country"},
         
         {
           "field": "Life Ladder",
