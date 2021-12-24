@@ -1,0 +1,67 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  
+    "title": {
+      "text": "Happiness and freedom to make life choices",
+      "subtitle":"2020, Source: World Happiness Report",
+      "subtitleFontStyle":"italic",
+      "subtitleFontSize":10,
+      "anchor": "start",
+      "color": "black"
+    },
+   
+    "height": 300,
+    "width": 260,
+  
+    "data": {
+      "url": "https://raw.githubusercontent.com/norettevulkan/norettevulkan.github.io/main/HappinessData.csv"
+    },
+    
+    "selection": {
+      "paintbrush": {"type": "multi", "on": "mouseover", "nearest": true},
+      "grid": {"type": "interval", "bind": "scales"}
+    },
+    
+    "mark": {"type": "circle", "opacity": 0.4, "color":"blue"},
+  
+    "encoding": {
+      "x": {
+        "field": "Life Ladder",
+        "type": "quantitative",
+        "axis": {
+          "title": "Happiness score",
+          "grid": false,
+          "tickCount": 14,
+          "labelOverlap": "greedy"
+        }
+      },
+      "y": {
+        "field": "Freedom to make life choices",
+        "type": "quantitative",
+        "axis": {
+          "title": "Freedom to make life choices", 
+          "grid": false}
+      },
+      
+      "size": {
+        "condition": {"selection": "paintbrush", "value": 300, "init":{"value":70}},
+        "value": 70
+      },
+  
+      "tooltip": [
+        {"field": "Country name", "type": "ordinal", "title": "Location"},
+        
+        {
+          "field": "Life Ladder",
+          "type": "nominal",
+          "title": "Happiness score"
+        },
+        {
+          "field": "Freedom to make life choices",
+          "type": "nominal",
+          "title": "Freedom to make life choices"
+        }
+      ]
+    }
+  }
+  
