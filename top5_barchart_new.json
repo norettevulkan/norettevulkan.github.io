@@ -1,0 +1,36 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/norettevulkan/norettevulkan.github.io/main/top5_Explainedby_new.csv"
+  },
+  "mark": "bar",
+  "width": 250,
+  "height": 300,
+  "title": {
+    "text": "What makes countries happy?",
+    "subtitle": "Top 5 ranking happpiest countries 2018-2020, Source: World Happiness Index",
+    "subtitleFontStyle": "italic",
+    "subtitleFontSize": 10,
+    "anchor": "start",
+    "color": "black"
+  },
+    "transform": [
+    {"fold": ["Log GDP per capita",	"Social support","Healthy life expectancy",	"Freedom to make life choices",	"Generosity",	"Perceptions of corruption",	"Dystopia + residual"], "as": ["explained by", "value"]}
+,  {"filter": {"field": "Country name", "oneOf": ["Denmark","Finland","Iceland","Switzerland","Netherlands"]}}],
+  "encoding": {
+    "y": {"field": "Country name", "sort": "-x", "type": "ordinal", "title": null},
+    "x": {"field": "value", "title": "Happiness score", "type": "quantitative"},
+    "color": {
+      "field": "explained by",
+      "type": "nominal",
+      "legend": {"orient": ""},
+      "scale": {
+        "domain": [
+"Log GDP per capita",	"Social support","Healthy life expectancy",	"Freedom to make life choices",	"Generosity",	"Perceptions of corruption",	"Dystopia + residual"
+        ],
+        
+        "scheme": "inferno"
+      }, "title": "Explained by:"
+    }
+  }
+}
