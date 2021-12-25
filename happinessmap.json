@@ -8,5 +8,14 @@
   },
   "projection": {"type": "naturalEarth1"},
   "mark": "geoshape",
-  "encoding": {"color": {"field": "properties.epi", "type": "quantitative","scale":{"scheme":"inferno"},"sort":"descending","title":"Happiness Score"}}
+  "encoding": {
+    "color": {
+      "field": "properties.epi",
+      "type": "quantitative",
+      "scale": {"scheme": "inferno"},
+      "sort": "descending",
+      "title": "Happiness Score"
+    },
+    "tooltip":[{"field":"properties.epi", "type":"quantitative" ,"title":"Happiness score"}] 
+  }
 }
