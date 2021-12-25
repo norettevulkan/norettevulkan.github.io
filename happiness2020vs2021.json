@@ -1,0 +1,42 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Happiness ratings",
+    "subtitle": "2020 vs 2021, Source: World Happiness Index",
+    "subtitleFontStyle": "italic",
+    "subtitleFontSize": 10,
+    "anchor": "start",
+    "color": "black"
+  },
+  "data": {
+    "url": "https://raw.githubusercontent.com/norettevulkan/norettevulkan.github.io/main/world%20happiness.csv",
+    "format": {"type": "csv"}
+  },
+    "selection": {
+    "paintbrush": {"type": "multi", "on": "mouseover", "nearest": true},
+    "grid": {"type": "interval", "bind": "scales"}
+  },
+  "height": 300,
+  "width": 310,
+  "mark": {"type": "circle", "opacity": 0.3, "color": "orangered"},
+  "encoding": {
+    "x": {
+      "field": "Happiness 2021",
+      "type": "quantitative",
+      "axis": {"grid": false}
+    },
+    "y": {
+      "field": "Happiness 2020",
+      "type": "quantitative",
+      "axis": {"grid": false}
+    },    "size": {
+      "condition": {
+        "selection": "paintbrush",
+        "value": 300,
+        "init": {"value": 70}
+      },
+      "value": 70
+    },
+    "tooltip":[{"field":"Country", "type": "nominal"},{"field":"Happiness 2020"},{"field":"Happiness 2021"}]
+  }
+}
