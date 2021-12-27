@@ -26,9 +26,8 @@
 
 <body>
  <h1> Understanding Happiness </h1>
-<p> I was curious to better understand the Economics of Happiness after spending a year abroad living in Denmark, which consistently ranks in the top 5 in the World Happiness Index.
-  The reasons for Denmarks high ranking include good quality of life, trust in institutions and low crime. 
-  However, the high antidepressant rate and ghettoisation of areas with high immigrant populations leads me to question how we define a country as "Happy" </p>
+<p> I was curious to better understand the Economics of Happiness after spending a year abroad living in Denmark, which consistently ranks in the top 5 in the World Happiness Index. 
+  The World Happiness Report was first released in 2012 and ranks countries based on life evaluations from samples of each countries population. </p>
 
   <!--Chart 3 -->
  <p> This map visualises the happiness scores of different countries in the 2021 Happiness Index. Countries with higher scores are coloured darker.
@@ -39,31 +38,32 @@
         vegaEmbed('#chart3', myChart3);
       </script>
   </div>
-  <p> The second map looks zooms in on Europe: </p>
-  <p> <a href="https://colab.research.google.com/drive/1xQKdihSvSz-cgmckKmbG_m8ZjSPOxVo0?usp=sharing"> Python code </a> </p>
-
-    <div class="chart" id="chart4">
-      <script>
-        var myChart4 = "europeheatmap.json";
-        vegaEmbed('#chart4', myChart4);
-      </script>
-  </div>
+  <p> Add python code </p>
 
   <!--Chart 1 -->
- <p> The first graph shows Iceland ranked as one of the top 5 Happiest country in the world in 2021. The second graph paints a different picture - showing that Iceland had the highest antidepressant rate in 2017 compared to the other countries studied by OECD </p>
+ <p>The world happiness report bases life evaluations on 6 factors: levels of GDP, life expectancy, generosity, social support, freedom and corruption. 
+   This graph shows the extent to which each factor is estimated to contribute to making life evaluations higher in each country than they are in Dystopia, a hypothetical country that has values equal to the world’s lowest national averages for each of the six factors.
+ </p>
   <div class="chart" id="chart1">
       <script>
         var myChart1 = "top5_barchart_new.json";
         vegaEmbed('#chart1', myChart1);
       </script>
   </div>
-
-<!--Chart 2 -->
-<div class="chart" id="chart2">
-    <script>
-      var myChart2 = "antidepressants.json";
-      vegaEmbed('#chart2', myChart2);
-    </script>
-</div>
   
+  <p> The World Happiness Report however ackowledges that there are likely to be other factors which affect happiness and are not yet included in the report. They also highlight
+    that the variables are intended to illustrate correlation rather than to reflect clean causal estimates. Finding causal estimates of the effect of each factor on happiness would cause significant 
+    endogeneity issues. </p>
+  <p> I decided to look for evidence of correlation between happiness and other factors excluded in the report. Firstly, air pollution: </p>
+    <!--Chart 2 -->
+  <div class="chart" id="chart2">
+      <script>
+        var myChart2 = "airpollutionvshappiness.json";
+        vegaEmbed('#chart2', myChart2);
+      </script>
+  </div>
+  <p> <a class="textLink" href="https://colab.research.google.com/drive/10mjNBMdNy0zb94knbek2FHo6q6lYDshd?usp=sharing"> python scraping </a> </p>
+  <p> Seems to be some correlation between lower air pollution and higher happiness score </p>
+  
+
   
