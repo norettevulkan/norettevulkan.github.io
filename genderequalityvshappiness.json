@@ -1,0 +1,55 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "title": {
+    "text": "Happiness and gender inequality",
+    "subtitle": "2019, Sources: World Happiness Report and UNDP GII Data",
+    "subtitleFontStyle": "italic",
+    "subtitleFontSize": 10,
+    "anchor": "start",
+    "color": "black"
+  },
+  "height": 300,
+  "width": 260,
+  "data": {
+    "url": "https://raw.githubusercontent.com/norettevulkan/norettevulkan.github.io/main/happiness_genderequality.csv"
+  },
+  "selection": {
+    "paintbrush": {"type": "multi", "on": "mouseover", "nearest": true},
+    "grid": {"type": "interval", "bind": "scales"}
+  },
+  "mark": {"type": "circle", "opacity": 0.6, "color": "hotpink"},
+  "encoding": {
+    "x": {
+      "field": "Life Ladder",
+      "type": "quantitative",
+      "axis": {
+        "title": "Happiness",
+        "grid": false,
+        "tickCount": 14,
+        "labelOverlap": "greedy"
+      }
+    },
+    "y": {
+      "field": "GII Value",
+      "type": "quantitative",
+      "axis": {"title": "Gender Inequality", "grid": false}
+    },
+    "size": {
+      "condition": {
+        "selection": "paintbrush",
+        "value": 300,
+        "init": {"value": 70}
+      },
+      "value": 70
+    },
+    "tooltip": [
+      {"field": "Country", "type": "ordinal", "title": "Country"},
+      {"field": "Life Ladder", "type": "nominal", "title": "Happiness score"},
+      {
+        "field": "GII Value",
+        "type": "nominal",
+        "title": "Gender Inequality Index"
+      }
+    ]
+  }
+}
