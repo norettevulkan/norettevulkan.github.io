@@ -32,7 +32,7 @@
     "y": {
       "field": "2020 AVG",
       "type": "quantitative",
-      "axis": {"title": "Air quality (PM 2.5 µg/m³)", "grid": false}
+      "axis": {"title": "Air pollution (PM 2.5 µg/m³)", "grid": false}
     },
     "size": {
       "condition": {
@@ -48,7 +48,7 @@
       {
         "field": "2020 AVG",
         "type": "nominal",
-        "title": "Air quality (PM 2.5)"
+        "title": "Air pollution (PM 2.5)"
       }
     ]
   }
