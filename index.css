@@ -4,6 +4,7 @@ body{
     background-color: #ebe5e5;
       max-width: 450px;
     margin: auto;
+    overflow: auto;
 }
 
 h1, h3, p{
