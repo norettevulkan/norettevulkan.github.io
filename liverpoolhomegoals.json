@@ -9,7 +9,7 @@
 
     "title": {
     "text": "Liverpool home goals",
-    "subtitle":["Goals scored at Anfield, 20/21 season",""],
+    "subtitle":["Goals scored at Anfield, 20/21 season, Source: Sport Data API",""],
     "subtitleFontStyle":"italic",
     "subtitleFontSize":10,
     "anchor": "start",
