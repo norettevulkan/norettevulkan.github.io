@@ -16,14 +16,14 @@
   "width": 310,
   "mark": {"type": "bar", "point": false},
   "encoding": {
-    "x": {
+    "y": {
       "field": "Unnamed: 0",
       "type": "nominal",
       "title": null,
       "axis": {"grid": false},
-      "sort": "-y"
+      "sort": "-x"
     },
-    "y": {
+    "x": {
       "field": "ICU and IMCU beds/100,000 population",
       "type": "quantitative",
       "title": null,
@@ -64,9 +64,10 @@
           "#66a1cf",
           "#66alcf",
           "#66a1cf",
-          "red"       ]
+          "red"
+        ]
       },
       "legend": null
+    }
   }
-}
 }
