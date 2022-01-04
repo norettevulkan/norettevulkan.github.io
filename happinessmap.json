@@ -21,7 +21,10 @@
         "field": "properties.epi",
         "type": "quantitative",
         "title": "Happiness score"
-      }
+      },
+      {"field":"properties.name",
+      "type": "nominal",
+      "title": "Country"}
     ]
   }
 }
