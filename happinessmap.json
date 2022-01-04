@@ -3,7 +3,7 @@
   "width": 500,
   "height": 300,
   "data": {
-    "url": "https://raw.githubusercontent.com/norettevulkan/norettevulkan.github.io/main/topojson_export_norette.json",
+    "url": "https://raw.githubusercontent.com/norettevulkan/norettevulkan.github.io/main/topojson_improved.json",
     "format": {"type": "topojson", "feature": "countries"}
   },
   "projection": {"type": "naturalEarth1"},
