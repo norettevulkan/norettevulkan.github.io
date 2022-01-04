@@ -1,0 +1,38 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/norettevulkan/norettevulkan.github.io/main/happ_survey.csv"
+  },
+  "mark": "bar",
+  "width": 250,
+  "height": 300,
+  "title": {
+    "text": "What makes people happy?",
+    "subtitle": "Sources of happiness, 2020, Source: Ipsos",
+    "subtitleFontStyle": "italic",
+    "subtitleFontSize": 10,
+    "anchor": "start",
+    "color": "black"
+  }, 
+  "transform": [{"calculate": "datum.Importance/100","as": "divided"}],
+  "encoding": {
+    "y": {
+      "field": "Factor",
+      "sort": "-x",
+      "type": "nominal",
+      "title": null,
+     "axis": {"grid": false}
+    },
+    "x": {"field": "Importance", "title": null, "type": "quantitative","axis": {"grid": false}},
+     "tooltip": [
+      {"field": "divided", "type": "quantitative","title":"Importance","format": ".0%"}],
+    "color": {
+      "field": "Factor",
+      "type": "nominal",
+      "scale": {"scheme": "goldgreen"},
+      "sort":"-x",
+      "title":null,
+      "legend":null
+  }
+}
+}
