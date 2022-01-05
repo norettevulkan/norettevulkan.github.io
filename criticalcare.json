@@ -68,6 +68,7 @@
         ]
       },
       "legend": null
-    }
+    },
+    "tooltip":[{"field":"ICU and IMCU beds/100,000 population"}]
   }
 }
