@@ -1,7 +1,7 @@
 /* This is the design for my project page */
 /* Background */
 body{
-    background-color: #272727;
+    background-color: #5cdb95;
       max-width: 450px;
     margin: auto;
     overflow: auto;
@@ -9,17 +9,18 @@ body{
 
 h1{ 
   
-  color: #ffe400;
+  color: #edf5e1;
   font-family:'Roboto', sans-serif;
 }
 h3{
-    color: #ff652f;
+    color: #05386b;
     font-family: 'Roboto', sans-serif;
 }
 
 p{
-  color: #747474;
+  color: #05386b;
   font-family: 'Roboto', sans-serif;
+  text-align: justify;
   
 }
 
@@ -42,12 +43,12 @@ p{
     }
 /* Hyperlinks */
 a:link {
-  color: #ad8c7d;
+  color: #8ee4af;
   background-color: transparent;
   text-decoration: none;
 }
 a:visited {
-  color: #ad8c7d;
+  color: #8ee4af;
   background-color: transparent;
   text-decoration: none;
 }
@@ -57,7 +58,7 @@ a:hover {
   text-decoration: underline;
 }
 a:active {
-  color: pink;
+  color: #379683;
   background-color: transparent;
   text-decoration: underline;
 }
