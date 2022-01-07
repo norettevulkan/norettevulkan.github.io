@@ -35,31 +35,39 @@
 
   <!--Chart 3 -->
  <p> This map visualises the happiness scores of different countries in the 2021 Happiness Index. Countries with higher scores are coloured darker. </p>
-  <div class="chart" id="chart3">
+     <div class="container">
+ 
+       <div class="chart" id="chart3">
       <script>
         var myChart3 = "happinessmap.json";
         vegaEmbed('#chart3', myChart3);
       </script>
   </div>
+       
+  </div>  
   <p> <a class="textLink" href="https://colab.research.google.com/drive/1KWhZ_eQOYD1PQx5l51stVz-ZaZbXa6Fo?usp=sharing"> python notebook </a> </p>
   <h3> What makes people happy? </h3>
   <!--Chart 1 -->
  <p>The world happiness report bases life evaluations on 6 factors: levels of GDP, life expectancy, generosity, social support, freedom and corruption. 
    This graph shows the extent to which each factor is estimated to contribute to making life evaluations higher in each country than they are in Dystopia, a hypothetical country that has values equal to the world’s lowest national averages for each of the six factors.
- </p>
+ </p> 
+ <div class="container">
   <div class="chart" id="chart1">
       <script>
         var myChart1 = "top5_barchart_new.json";
         vegaEmbed('#chart1', myChart1);
       </script>
   </div>
+  </div>
   <p> A survey asks people which factos account most for their happiness </p>
       <!--Chart 5 -->
+ <div class="container">
   <div class="chart" id="chart5">
       <script>
         var myChart5 = "happiness_survey.json";
         vegaEmbed('#chart5', myChart5);
       </script>
+  </div>
   </div>
   
   
@@ -69,21 +77,25 @@
     endogeneity issues. </p>
   <p> I decided to look for evidence of correlation between happiness and other factors excluded in the report. Firstly, air pollution: </p>
     <!--Chart 2 -->
+  <div class="container">
   <div class="chart" id="chart2">
       <script>
         var myChart2 = "airpollutionvshappiness.json";
         vegaEmbed('#chart2', myChart2);
       </script>
   </div>
+  </div>
   <p> <a class="textLink" href="https://colab.research.google.com/drive/10mjNBMdNy0zb94knbek2FHo6q6lYDshd?usp=sharing"> python notebook </a> </p>
   <p> Seems to be some correlation between lower air pollution and higher happiness score </p>
 <p> How about gender equality and happiness? I used the UNDP Global Inequality Index to make this chart: </p>
     <!--Chart 4 -->
+<div class="container">
   <div class="chart" id="chart4">
       <script>
         var myChart4 = "genderequalityvshappiness.json";
         vegaEmbed('#chart4', myChart4);
       </script>
+  </div>
   </div>
   <p> <a class="textLink" href="https://colab.research.google.com/drive/10z_rE9OBbtQk1N4PPNCrcI5aYmaDI_fj?usp=sharing"> python notebook </a> </p>
   
