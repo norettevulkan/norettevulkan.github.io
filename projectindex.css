@@ -4,6 +4,9 @@ body{
     background-color: #8ee4af;
     margin: auto;
     overflow: auto;
+    text-align:center; 
+    vertical-align:middle;
+
 }
 
 footer {
@@ -19,19 +22,16 @@ h1{
 h3{
     color: #05386b;
     font-family: 'Roboto', sans-serif;
+  
 }
 
 p{
   color: #edf5e1;
   font-family: 'Roboto', sans-serif;
-  text-align: center;
   max-width: min(90vw, 815px);
   
 }
 
-.text-center {
-    text-align: center;
-}
 
 /* Charts */
 
