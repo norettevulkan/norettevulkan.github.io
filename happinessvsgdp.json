@@ -1,0 +1,89 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "title": {
+    "text": " GDP and Happiness",
+    "subtitle": "Source: The World Happiness Report",
+    "subtitleFontStyle": "italic",
+    "subtitleFontSize": 10,
+    "anchor": "start",
+    "color": "black",
+    "subtitleColor": "black"
+  },   
+  "data": {
+    "url": "https://raw.githubusercontent.com/norettevulkan/norettevulkan.github.io/main/happiness_gdppercap.csv",
+    "format": {"type": "csv"}
+  },
+  "height": 300,
+  "width": 300,
+  "config": {"background":"white", "view": {"stroke": "transparent"}},
+  "encoding": {
+    "x": {
+      "field": "Log GDP per capita",
+      "type": "quantitative",
+      "title": "Log GDP per capita",
+      "axis": {
+        "domainColor": "black",
+        "tickColor": "black",
+        "labelColor": "black",
+        "grid": false,
+        "titleColor": "black"
+      },
+      "scale": {"domain": [6, 12]}
+    },
+    "y": {
+      "field": "Life Ladder",
+      "type": "quantitative",
+      "title": "Happiness",
+      "axis": {
+        "domainColor": "black",
+        "tickColor": "black",
+        "labelColor": "black",
+        "grid": false,
+        "titleColor": "black"
+      },
+    "scale": {"domain": [2, 9]}}
+    },
+  "layer": [
+    {
+      "data": {
+        "values": [
+          {
+            "Life Ladder": 2,
+            "Log GDP per capita": 4.826315078966573,
+            "Colour": "Regression"
+          },
+          {
+            "Life Ladder": 9,
+            "Log GDP per capita": 13.978288035147973,
+            "Colour": "Regression"
+          }
+        ]
+      },
+      "mark": {"type": "line","clip":"true", "color":"purple"},
+      "encoding": {"tooltip": null}
+    },
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/norettevulkan/norettevulkan.github.io/main/happiness_gdppercap.csv"
+      },
+      "mark": {"type": "point", "filled": true, "color":"orangered","opacity":0.4}
+    },
+    {
+      "data": {
+        "values": [
+          {
+            "Life Ladder": 3.5,
+            "Log GDP per capita": 11,
+            "text": "R² = 0.62",
+            "Colour": "Regression"
+          }
+        ]
+      },
+      "mark": {"type": "text", "color": "purple", "fontWeight": "bold"},
+      "encoding": {
+        "tooltip": null,
+        "text": {"field": "text", "type": "nominal"}
+      }
+    }
+  ]
+}
