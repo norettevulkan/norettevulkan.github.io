@@ -46,7 +46,23 @@
        
   </div>  
   <p> <a class="textLink" href="https://colab.research.google.com/drive/1KWhZ_eQOYD1PQx5l51stVz-ZaZbXa6Fo?usp=sharing"> python notebook </a> </p>
-  <h3> What makes people happy? </h3>
+  <h3> What makes countries happy? </h3>
+ <p> An obvious answer is that richer countries will be happier. This could be because people have higher incomes, there is better infrastructure, better resources etc. 
+   I regressed happiness against log GDP per capita, using <a class="textLink" href="https://colab.research.google.com/drive/1XVn-Z4OewZf5TbazZ7hb3uPoaN68Ou3x?usp=sharing"> python </a> </p>
+  <p> I used the dataset from the World Happiness Index which has observations  beginning in 2008, meaning there were 1000s of observations used to make the regression. Using OLS
+    the relationship was found to be: Happiness=-1.69+0.765(Log GDP per capita). The coefficient suggests a 1% increase in GDP per capita would lead to a 0.765% increase in happiness rating. However,
+    results are likely to be biased due to endogeneity issues. It is more useful therefore, to just consider the correlation. </p>
+  <p> This graph shows the correlation between Log GDP per capita and Happiness rating, using data from 2008-2020: </p>
+  <!--Chart 6-->
+  <div class="container">
+      <div class="chart" id="chart6">
+      <script>
+        var myChart6 = "happinessvsgdp.json";
+        vegaEmbed('#chart6', myChart6);
+      </script>
+  </div>
+  </div>
+  <p> We can see positive correlation between GDP and happiness, with a R2 of 0.62. </p>
   <!--Chart 1 -->
  <p>The world happiness report bases life evaluations on 6 factors: levels of GDP, life expectancy, generosity, social support, freedom and corruption. 
    This graph shows the extent to which each factor is estimated to contribute to making life evaluations higher in each country than they are in Dystopia, a hypothetical country that has values equal to the world’s lowest national averages for each of the six factors.
@@ -59,6 +75,8 @@
       </script>
   </div>
   </div>
+  <p> GDP per capita makes up the biggest identifiable contribution to happiness, but we can see that a large part of happiness is left unexplained by the 6 factors used by the World Happiness Index.
+  </p>
   <p> A survey asks people which factos account most for their happiness </p>
       <!--Chart 5 -->
  <div class="container">
@@ -72,10 +90,10 @@
   
   
   <h3> Looking for other correlations </h3>
-  <p> The World Happiness Report however ackowledges that there are likely to be other factors which affect happiness and are not yet included in the report. They also highlight
+  <p> The World Happiness Report ackowledges that there are other factors which affect happiness and are not yet included in the report. They also highlight
     that the variables are intended to illustrate correlation rather than to reflect clean causal estimates. Finding causal estimates of the effect of each factor on happiness would cause significant 
     endogeneity issues. </p>
-  <p> I decided to look for evidence of correlation between happiness and other factors excluded in the report. Firstly, air pollution: </p>
+  <p> I decided to look for evidence of correlation between happiness and other factors excluded in the report. This could  help explain the large unexplained "residual" contribution to countries happiness Firstly, air pollution: </p>
     <!--Chart 2 -->
   <div class="container">
   <div class="chart" id="chart2">
