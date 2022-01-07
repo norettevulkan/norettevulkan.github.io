@@ -1,7 +1,7 @@
 /* This is the design for my project page */
 /* Background */
 body{
-    background-color: #5cdb95;
+    background-color: #8ee4af;
       max-width: 450px;
     margin: auto;
     overflow: auto;
@@ -9,7 +9,7 @@ body{
 
 h1{ 
   
-  color: #edf5e1;
+  color: #05386b;
   font-family:'Roboto', sans-serif;
 }
 h3{
@@ -43,14 +43,14 @@ p{
     }
 /* Hyperlinks */
 a:link {
-  color: #8ee4af;
+  color: #edf5e1;
   background-color: transparent;
-  text-decoration: none;
+  text-decoration: underline;
 }
 a:visited {
   color: #8ee4af;
   background-color: transparent;
-  text-decoration: none;
+  text-decoration: underline;
 }
 a:hover {
   color: white;
