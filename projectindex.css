@@ -81,12 +81,12 @@ p{
 
 /* Hyperlinks */
 a:link {
-  color: #edf5e1;
+  color: #ffbc19;
   background-color: transparent;
   text-decoration: underline;
 }
 a:visited {
-  color: #edf5e1f;
+  color: #ffbc19;
   background-color: transparent;
   text-decoration: underline;
 }
