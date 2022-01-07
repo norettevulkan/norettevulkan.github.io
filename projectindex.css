@@ -64,6 +64,19 @@ p{
     justify-content: center;
     text-align: left;
 }
+.box {
+		
+    box-sizing: border-box;
+    background-color: none;
+	     width: auto;
+	            border-radius: 10px;
+	            padding: 10px;
+	            text-align: center;
+	            display: inline-block;
+	            margin: 10px;
+	            max-width: 450px;
+	              
+	          }
 
 /* Hyperlinks */
 a:link {
