@@ -2,7 +2,6 @@
 /* Background */
 body{
     background-color: #8ee4af;
-      max-width: 450px;
     margin: auto;
     overflow: auto;
 }
@@ -11,9 +10,6 @@ footer {
     height: 100px;
 }
 
-.text-center {
-    text-align: center;
-}
 
 h1{ 
   
@@ -29,7 +25,12 @@ p{
   color: #edf5e1;
   font-family: 'Roboto', sans-serif;
   text-align: left;
+  max-width: min(90vw, 815px);
   
+}
+
+.text-center {
+    text-align: center;
 }
 
 /* Charts */
