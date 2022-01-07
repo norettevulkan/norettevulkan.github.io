@@ -56,6 +56,14 @@ p{
       transition: 0.6s;
       
     }
+/* Adding containers to my charts */
+
+.container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
 /* Hyperlinks */
 a:link {
   color: #edf5e1;
