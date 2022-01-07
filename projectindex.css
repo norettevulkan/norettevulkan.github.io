@@ -1,1 +1,63 @@
+/* This is the design for my project page */
+/* Background */
+body{
+    background-color: #272727;
+      max-width: 450px;
+    margin: auto;
+    overflow: auto;
+}
 
+h1{ 
+  
+  color: #ffe400;
+  font-family:'Roboto', sans-serif;
+}
+h3{
+    color: #ff652f;
+    font-family: 'Roboto', sans-serif;
+}
+
+p{
+  color: #747474;
+  font-family: 'Roboto', sans-serif;
+  
+}
+
+/* Charts */
+
+.chart{
+    background-color: white;
+    width:400px;
+    border-width: 10px;
+    border-style: solid;
+    border-radius: 5px;
+    border-color: white;
+}
+
+.chart:hover {
+    
+      transform: scale(1.04, 1.04);
+      transition: 0.6s;
+      
+    }
+/* Hyperlinks */
+a:link {
+  color: #ad8c7d;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:visited {
+  color: #ad8c7d;
+  background-color: transparent;
+  text-decoration: none;
+}
+a:hover {
+  color: white;
+  background-color: transparent;
+  text-decoration: underline;
+}
+a:active {
+  color: pink;
+  background-color: transparent;
+  text-decoration: underline;
+}
