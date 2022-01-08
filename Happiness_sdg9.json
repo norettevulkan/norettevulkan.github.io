@@ -1,0 +1,55 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "title": {
+    "text": "Happiness and industry, innovation and infrastructure",
+    "subtitle": "2021, Sources: The World Happiness Report and The Sustainable Development Goals Index",
+    "subtitleFontStyle": "italic",
+    "subtitleFontSize": 10,
+    "anchor": "start",
+    "color": "black"
+  },
+  "height": 300,
+  "width": 300,
+  "data": {
+    "url": "https://raw.githubusercontent.com/norettevulkan/norettevulkan.github.io/main/SDG_happiness.csv"
+  },
+  "selection": {
+    "paintbrush": {"type": "multi", "on": "mouseover", "nearest": true},
+    "grid": {"type": "interval", "bind": "scales"}
+  },
+  "mark": {"type": "circle", "opacity": 0.6, "color":"rebeccapurple"},
+  "encoding": {
+    "x": {
+      "field": "Happiness 2021",
+      "type": "quantitative",
+      "axis": {
+        "title": "Happiness",
+        "grid": false,
+        "tickCount": 14,
+        "labelOverlap": "greedy"
+      }
+    },
+    "y": {
+      "field": "Goal 9 Score",
+      "type": "quantitative",
+      "axis": {"title": "Industry, innovation and infrastructure" , "grid": false}
+    }
+    ,"size": {
+      "condition": {
+        "selection": "paintbrush",
+        "value": 300,
+        "init": {"value": 70}
+      },
+      "value": 70
+    },
+    "tooltip": [
+      {"field": "Country", "type": "ordinal", "title": "Country"},
+      {"field": "Happiness 2021", "type": "nominal", "title": "Happiness Rating"},
+      {
+        "field": "Goal 9 Score",
+        "type": "nominal",
+        "title": "Goal 9 Score"
+      }
+    ]
+  }
+}
