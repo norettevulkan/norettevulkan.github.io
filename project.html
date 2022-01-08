@@ -77,17 +77,6 @@
   </div>
   <p> GDP per capita makes up the biggest identifiable contribution to happiness, but we can see that a large part of happiness is left unexplained by the 6 factors used by the World Happiness Index.
   </p>
-  <p> A survey asks people which factos account most for their happiness </p>
-      <!--Chart 5 -->
- <div class="container">
-  <div class="chart" id="chart5">
-      <script>
-        var myChart5 = "happiness_survey.json";
-        vegaEmbed('#chart5', myChart5);
-      </script>
-  </div>
-  </div>
-  
   
   <h3> Looking for other correlations </h3>
   <p> The World Happiness Report ackowledges that there are other factors which affect happiness and are not yet included in the report. They also highlight
@@ -121,7 +110,7 @@
   </div>
   <p> Unfortunately there are not many observations on this graph due to lack of available data. There does appear to be some negative correlation between happiness and air pollution,
     but the lack of observations limits the usefulness of this graph.</p>
-  <p> The writers of the World Happiness Report have made a paper comparing happiness ratings with countries Sustainable Development Goal scores. The Sustainable Development Goals were dopted by all member states of the UN in 2015 and 
+  <p> The writers of the World Happiness Report have made a paper comparing happiness ratings with countries Sustainable Development Goal scores. The Sustainable Development Goals were adopted by all member states of the UN in 2015 and 
     "describe a universal agenda that applies to and must be implemented by all countries." There are 17 Goals: </p>
     <div class="container">
       <div class="pngchart">
@@ -131,7 +120,7 @@
   <p> In their research they compared scores in each SDG to happiness ratings to search for correlation. They found the strongest correlations between happiness and goal 9 and happiness and goal 12.
     I decided to find the data and compare these variables to see how they looked graphically. The SDG dataset was massive and I used both excel and python to clean the data and then python to combine it with the happiness data and run regressions.
  My python workbook is <a class="textLink" href="https://colab.research.google.com/drive/1GPiiVQEiXapGzrSE10E-Uz4fNl0XnbfO?usp=sharing"> here </a>. </p>
-  <p> Firstly, I looked for the correlation between Happinss and Goal 9- Industry, Innovation and Infrastructure: </p>
+  <p> Firstly, I looked for the correlation between Happiness and Goal 9- Industry, Innovation and Infrastructure: </p>
    <!--Chart 7-->
   <div class="container">
       <div class="chart" id="chart7">
@@ -142,6 +131,17 @@
   </div>
   </div>
   <p> As expected, there appears to be strong positive correlation. I ran an OLS Regression on Python and found the R^2 value to be 0.617 (3.d.p). </p>
+  <p> Next, I looked at the correlation between Happiness and Goal 12- responsible consumption and production. The result is more surprising: </p>
+   <!--Chart 8-->
+  <div class="container">
+      <div class="chart" id="chart8">
+      <script>
+        var myChart8 = "happiness_sdg12.json";
+        vegaEmbed('#chart8', myChart8);
+      </script>
+  </div>
+  </div>
+  <p> The graph suggests a negative correlation between the 2. The R^2 was 0.538. </p>
   </body>
 <!-- ///////////////////  END BODY //////////////////////////////////// -->
 
