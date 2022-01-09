@@ -32,7 +32,7 @@
 
 <body>
  <h1> Explaining Happiness </h1>
-<p> Aims: I was curious to better understand what makes a country "happy" after spending a year living in Denmark, which consistently ranks in the top 5 in the World Happiness Index. 
+<p> I was curious to better understand what makes a country "happy" after spending a year living in Denmark, which consistently ranks in the top 5 in the World Happiness Index. 
   The World Happiness Report was first released in 2012 and ranks countries based on life evaluations from samples of each countries' population. </p>
 
   <!--Chart 3 -->
@@ -53,7 +53,7 @@
    I regressed happiness against log GDP per capita, using <a class="textLink" href="https://colab.research.google.com/drive/1XVn-Z4OewZf5TbazZ7hb3uPoaN68Ou3x?usp=sharing"> python </a>. </p>
   <p> I used the dataset from the World Happiness Index which has observations  beginning in 2008, meaning there were 1000s of observations used to make the regression. Using OLS
     the relationship was found to be: Happiness=-1.69+0.765(Log GDP per capita). The coefficient suggests a 1% increase in GDP per capita would lead to a 0.765% increase in happiness rating. However,
-    results are likely to be biased due to endogeneity issues. It is more useful therefore, to just consider the correlation. </p>
+    results are likely to be biased due to endogeneity issues so it is more useful to analyse the correlation. </p>
   <p> This graph shows the correlation between Log GDP per capita and Happiness rating, using data from 2008-2020: </p>
   <!--Chart 6-->
   <div class="container">
@@ -67,7 +67,7 @@
   <p> We can see positive correlation between GDP and happiness, with a R2 of 0.62. </p>
   <!--Chart 1 -->
  <p>The world happiness report bases life evaluations on 6 factors: levels of GDP, life expectancy, generosity, social support, freedom and corruption. 
-   This graph shows the extent to which each factor is estimated to contribute to making life evaluations higher in each country than they are in Dystopia, a hypothetical country that has values equal to the world’s lowest national averages for each of the six factors.
+   Participants are asked the extent to which each factor is estimated to contribute to making life evaluations higher in each country than they are in Dystopia, a hypothetical country that has values equal to the world’s lowest national averages for each of the six factors.
  </p> 
  <div class="container">
   <div class="chart" id="chart1">
@@ -90,9 +90,9 @@
   </p>
   
   <h3> Looking for other correlations </h3>
-  <p> The World Happiness Report ackowledges that there are other factors which affect happiness and are not yet included in the report. They also highlight
-    that the variables are intended to illustrate correlation rather than to reflect clean causal estimates. Finding causal estimates of the effect of each factor on happiness would cause significant 
-    endogeneity issues. </p>
+  <p> The World Happiness Report acknowledges that there are other factors that affect happiness and are not yet included in the report. They also highlight
+    that the variables are intended to illustrate correlation rather than to reflect clean causal estimates.</p>
+  
   <p> I decided to look for evidence of correlation between happiness and other factors excluded in the report. 
     This could  help explain the large unexplained "residual" contribution to countries happiness. </p>
   <p> First, I looked at gender equality and happiness. I used data scraped from the UNDP Global Inequality Index (<a class="textLink" href="https://colab.research.google.com/drive/10z_rE9OBbtQk1N4PPNCrcI5aYmaDI_fj?usp=sharing"> python code </a>)
@@ -127,7 +127,7 @@
       </script>
   </div>
   </div>
-  <p> As expected, there appears to be strong positive correlation. I ran an OLS Regression on Python and found the R^2 value to be 0.617 (3.d.p). </p>
+  <p> As expected, there appears to be strong positive correlation. I ran an OLS Regression on Python and found the R^2 value to be 0.617. </p>
   <p> Next, I looked at the correlation between Happiness and Goal 12- responsible consumption and production. The result is more surprising: </p>
    <!--Chart 8-->
   <div class="container">
@@ -146,15 +146,15 @@
     The correlation is not always what we'd expect. Limited available data means it is difficult for the WHR to consider other variables but in
   future this may change. </p>
   
-  <p> Data: All the data used is uploaded to my github repository. The excel files downloaded from the World Happiness Report and the Sustanaible Development 
+  <p> Data: All the data used is uploaded to my github repository. The excel files downloaded from the World Happiness Report and the Sustainable Development 
     Goals can be found <a class="textLink" href="https://github.com/norettevulkan/norettevulkan.github.io/tree/main/All_data"> here </a>. My project therefore could be replicated. 
     The biggest challenge to replicability stems from the SDG data which comes in Excel format and couldn’t be opened on python without being cleaned in Excel first.</p>
 
   <h3> Challenges: </h3> 
 <p>- I was unable to do the cleaning for the SDG data on python – had to do some cleaning on excel first</p>
 <p>- There were often missing values in datasets. I used Python to clean datasets before running regressions and making correlation graphs. 
-  Lack of data limited my analysis because for some variables that I wanted to compare with happiness there were not enough data points to show correlations. </p>
-<p>- I could only find correlations - it would be very diffucult to find causal estimates due to endogeneity issues </p>
+  My analysis was limited because for some variables that I wanted to compare with happiness there were not enough data points to show correlations. </p>
+<p>- I could only find correlations - it would be very difficult to find causal estimates due to endogeneity issues </p>
 
 
   </body>
