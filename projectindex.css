@@ -55,6 +55,8 @@ p{
 
 .button:hover{
 background-color: transparent;
+color: white;
+text-decoration: none;
 box-shadow: 5px 40px -10px #000000;
 }
 
