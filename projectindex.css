@@ -40,9 +40,8 @@ p{
 
 /* Button for home page */
 .button {
-  background-color: #F26419;
+  background-color: white;
   border: 1px solid #F26419;
-  color: white;
   font-family: 'Roboto', sans-serif;
   border-radius: 150px;
   padding: 15px 32px;
@@ -52,7 +51,8 @@ p{
   font-size: 16px;
     
 }
-
+.button:hoover {
+background-color: #F26419 }
 
 /* Charts */
 
