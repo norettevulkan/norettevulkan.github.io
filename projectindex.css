@@ -56,7 +56,6 @@ p{
 .button:hover{
 background: #F26419;
 box-shadow: 5px 40px -10px #000000;
-text-decoration: none;
 }
 
 /* Charts */
