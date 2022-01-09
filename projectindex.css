@@ -51,8 +51,8 @@ p{
   font-size: 16px;
     
 }
-.button:hoover {
-background-color: #F26419 }
+.button:hover {
+background-color: #F26419;}
 
 /* Charts */
 
