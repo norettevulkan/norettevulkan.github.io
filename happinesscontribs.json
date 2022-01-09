@@ -4,7 +4,7 @@
     "url": "https://raw.githubusercontent.com/norettevulkan/norettevulkan.github.io/main/top5_Explainedby_new.csv"
   },
   "mark": "bar",
-  "width": 250,
+  "width": 220,
   "height": 300,
   "title": {
     "text": "What makes countries happy?",
