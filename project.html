@@ -106,16 +106,16 @@
       </script>
   </div>
   </div>
-  <p> The graph suggests a negative correlation between gender inequality and happiness. Unfortunately I had to use 2019 data since this was the most recent Gender Inequality Index data that I could find. </p>
-  <p> The writers of the World Happiness Report have made a paper comparing happiness ratings with countries Sustainable Development Goal scores. The Sustainable Development Goals were adopted by all member states of the UN in 2015 and 
-    "describe a universal agenda that applies to and must be implemented by all countries." There are 17 Goals: </p>
+  <p> The graph suggests a negative correlation between gender inequality and happiness. Unfortunately, I had to use 2019 data since this was the most recent Gender Inequality Index data that I could find. </p>
+  <p> The writers of the World Happiness Report have made a <a class="textLink" href="https://www.nature.com/articles/s41598-020-71916-9">paper</a> comparing happiness ratings with countries Sustainable Development Goal scores. 
+    The <a class="textLink" href="https://www.sdgindex.org/">Sustainable Development Goals</a> were adopted by all member states of the UN and countries are rated for each goal out of 100. There are 17 Goals: </p>
     <div class="container">
       <div class="pngchart">
         <img src = "SDG_goals_resize.png" >
       </div>
   </div>
   <p> The research found the strongest correlations between happiness scores and Goal 9 and Goal 12.
-    I downloaded the data to show these correlations graphically. The SDG dataset was massive and I used both excel and python to clean the data and then python to combine it with the happiness data and run regressions.
+    I downloaded the data to show these correlations graphically. The SDG dataset was massive so I used both excel and python to clean the data. I used python to combine the SDG scores with the happiness data and run regressions.
  My python workbook is <a class="textLink" href="https://colab.research.google.com/drive/1GPiiVQEiXapGzrSE10E-Uz4fNl0XnbfO?usp=sharing"> here </a>. </p>
   <p> Firstly, I looked for the correlation between Happiness and Goal 9- Industry, Innovation and Infrastructure: </p>
    <!--Chart 7-->
@@ -150,11 +150,11 @@
     Goals can be found <a class="textLink" href="https://github.com/norettevulkan/norettevulkan.github.io/tree/main/All_data"> here </a>. My project therefore could be replicated. 
     The biggest challenge to replicability stems from the SDG data which comes in Excel format and couldn’t be opened on python without being cleaned in Excel first.</p>
 
-  <p> Challenges: </p> 
+  <h3> Challenges: </h3> 
 <p>- I was unable to do the cleaning for the SDG data on python – had to do some cleaning on excel first</p>
-<p>- There were often missing values so I used python to get rid of these so that I could still run regressions </p>
-<p>- I could only find correlations - would be very diffucult to find causal estimates due to endogeneity issues </p>
-<p>- I couldn’t find a relevant API  </p>
+<p>- There were often missing values in datasets. I used Python to clean datasets before running regressions and making correlation graphs. 
+  Lack of data limited my analysis because for some variables that I wanted to compare with happiness there were not enough data points to show correlations. </p>
+<p>- I could only find correlations - it would be very diffucult to find causal estimates due to endogeneity issues </p>
 
 
   </body>
