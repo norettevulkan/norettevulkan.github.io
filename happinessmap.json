@@ -7,7 +7,7 @@
     "subtitleFontSize": 10,
     "anchor": "start",
     "color": "black"},
-  "width": 500,
+  "width": 450,
   "height": 300,
   "data": {
     "url": "https://raw.githubusercontent.com/norettevulkan/norettevulkan.github.io/main/topojson_improved.json",
