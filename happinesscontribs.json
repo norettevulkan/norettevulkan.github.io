@@ -1,0 +1,67 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/norettevulkan/norettevulkan.github.io/main/top5_Explainedby_new.csv"
+  },
+  "mark": "bar",
+  "width": 250,
+  "height": 300,
+  "title": {
+    "text": "What makes countries happy?",
+    "subtitle": "Contributions of factors to countries happiness ratings, 2018-20, Source: The World Happiness Report",
+    "subtitleFontStyle": "italic",
+    "subtitleFontSize": 10,
+    "anchor": "start",
+    "color": "black"
+  },"transform": [
+    {
+      "fold": [
+        "Log GDP per capita",
+        "Social support",
+        "Healthy life expectancy",
+        "Freedom to make life choices",
+        "Generosity",
+        "Perceptions of corruption",
+        "Dystopia + residual"
+      ],
+      "as": ["explained by", "value"]
+    }],
+  "encoding": {
+    "x": {
+      "aggregate": "average",
+      "field": "value",
+      "sort": "y",
+      "type": "quantitative",
+      "title": "Global average of contributing factors to happiness",
+      "axis": {"grid": false,"labels": false,"ticks": false}},
+    "y": {
+      "field": "explained by",
+      "title": null,
+      "type": "nominal",
+      "axis": {"grid": false,"ticks": false},
+      "sort": "-x"
+    },
+    "tooltip": [
+      { "aggregate": "average",
+        "field": "value",
+        "type": "quantitative",
+        "title": "Avg. contribution to happiness rating"
+      }
+    ],
+    "color": {
+      "field": "explained by",
+      "type": "nominal",
+      "scale": {"range":[
+      "#f6d746",
+      "#d44842",
+      "#e55c30",
+    "#84206b",
+      "#140b34",
+      "#f57d15",
+      "#4f063d"]
+      },
+      "title": null,
+      "legend": null
+    }
+  }
+}
