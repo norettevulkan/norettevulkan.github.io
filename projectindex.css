@@ -40,9 +40,9 @@ p{
 
 /* Button for home page */
 .button {
-  background-color: transparent;
+  background-color: #ffbc19;
   border: 1px solid #F26419;
-  color: #F26419;
+  color: white;
   font-family: 'Roboto', sans-serif;
   border-radius: 150px;
   padding: 15px 32px;
@@ -54,7 +54,7 @@ p{
 }
 
 .button:hover{
-background: #ffbc19;
+background: #F26419;
 box-shadow: 5px 40px -10px #000000;
 text-decoration: none;
 }
