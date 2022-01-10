@@ -1,5 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "description": "scatter plot showing correlation between log GDP per capita and happiness rating. Added layers with R^2 and regression line that I found on python",
   "title": {
     "text": " GDP and Happiness",
     "subtitle": "Source: The World Happiness Report",
