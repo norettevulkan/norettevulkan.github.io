@@ -1,0 +1,59 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Graph aims to show scale of Hyperinflation",
+    "title": {
+      "text": "Hyperinflation - inflation in Zimbabwe VS the UK",
+      "subtitle": "Inflation, consumer prices (annual %), Source: World Bank",
+      "subtitleFontStyle":"italic",
+      "subtitleFontSize":10,
+      "anchor": "start",
+      "color": "black"
+    },
+
+
+    "height": 300,
+    "width": 300,
+    
+    "encoding": {
+      "x": {"field": "date", "type": "temporal", "title": null, "axis": {"grid": false}},
+
+      "y": {
+        "field": "value",
+        "type": "quantitative",
+        "title": null,
+        "axis": {
+          "grid": false
+      }},
+    "color": {
+      "field": "countryiso3code",
+      "type": "nominal",
+      "legend": {"orient": "top-left"},
+      "title": "Country:",
+      "scale": {
+        "domain": [
+          "GBR",
+          "ZWE"
+        ],
+        "scheme": "inferno"
+      }
+      }
+    },
+
+
+    "layer": [
+      
+      {"data": {"url": "https://api.factmaven.com/xml-to-json/?xml=https%3A%2F%2Fapi.worldbank.org%2Fv2%2Fcountry%2FGB%2Findicator%2FFP.CPI.TOTL.ZG%3Fdate%3D2010%3A2020",            "format":{
+          "type": "json",
+          "property": "data.data"
+        }},
+        "mark": {"type":"line"}
+      },
+
+      {"data": {"url": "https://api.factmaven.com/xml-to-json/?xml=https%3A%2F%2Fapi.worldbank.org%2Fv2%2Fcountry%2FZW%2Findicator%2FFP.CPI.TOTL.ZG%3Fdate%3D2010%3A2020",            "format":{
+          "type": "json",
+          "property": "data.data"
+        }},
+        "mark": {"type":"line", "color":"#e6224b"}
+      }
+    ]
+}
