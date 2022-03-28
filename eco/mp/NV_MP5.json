@@ -26,7 +26,7 @@
     },
     "tooltip": [
       {"field": "date", "title": "Date", "type": "temporal"},
-      {"field": "value", "title": "Value"}
+      {"field": "value", "title": "Value", "type":"quantitative"}
     ]
   },
   "layer": [{"data": {
