@@ -1,0 +1,41 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "",
+  "height": 300,
+  "width": 300,
+  "title": {
+    "text": "Deflation in Japan",
+    "subtitle": "Japan inflation rate (%), source: FRED",
+    "subtitleFontStyle": "italic",
+    "subtitleFontSize": 10,
+    "anchor": "start",
+    "color": "black"
+  },
+  "encoding": {
+    "x": {
+      "field": "date",
+      "type": "temporal",
+      "title": null,
+      "axis": {"grid": false}
+    },
+    "y": {
+      "field": "value",
+      "type": "quantitative",
+      "title": null,
+      "axis": {"grid": false}
+    },
+    "tooltip": [
+      {"field": "date", "title": "Date", "type": "temporal"},
+      {"field": "value", "title": "Value"}
+    ]
+  },
+  "layer": [{"data": {
+    "url": "https://api.allorigins.win/raw?url=https%3A%2F%2Fapi.stlouisfed.org%2Ffred%2Fseries%2Fobservations%3Fseries_id%3DFPCPITOTLZGJPN%26api_key%3D838a40e4f5a37b6b4d8c9cfc4b1abaff%26file_type%3Djson",
+    "format": {"type": "json", "property": "observations"}
+  },
+  "transform": [{"calculate": "year(datum.date)", "as": "year"},{"filter":"datum.year>='2000'"}],
+  "mark": {"type": "line", "color":"#122b39"}},
+  {"data":{"values":
+  [{"date":"2000","value":"0.0"}
+  ,{"date":"2020","value":"0.0"}]},"mark":{"type": "line","color":"#e6224b "}}]
+}
