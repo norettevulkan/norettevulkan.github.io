@@ -1,0 +1,26 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "height": 300,
+  "width":300,
+  "description": "US phillips curve using post 2000 data- no sign of trend. NOTE: code can be altered to show any time period",
+  "title": {
+    "text": "Phillips curve",
+    "subtitle": "Since 2000 in the US, Source: FRED",
+    "subtitleFontStyle": "italic",
+    "subtitleFontSize": 10,
+    "anchor": "start",
+    "color": "black"
+  },
+  "data":{"url": "https://raw.githubusercontent.com/norettevulkan/norettevulkan.github.io/main/eco/mp/fredgraph.csv"}, 
+  "transform": [{"calculate": "year(datum.DATE)", "as": "year"}, 
+    {"filter":"datum.year>=2000"}],
+  "mark": {"type": "circle", "opacity": 0.6, "color": "#e6224b"},
+  "encoding": {
+    "x": {"field": "UNRATE", "type": "quantitative","title":"Unemployment rate"},
+    "y": {"field": "CPIAUCSL_PC1", "type": "quantitative", "title":"Inflation rate"},
+    "tooltip": [
+      {"field": "DATE", "title": "Date", "type": "temporal"},
+      {"field": "UNRATE", "title": "Unemployment rate"},
+      {"field": "CPIAUCSL_PC1","title":"Inflation rate"}
+    ]}
+  }
