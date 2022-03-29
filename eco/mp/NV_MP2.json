@@ -1,0 +1,68 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "",
+  "height": 300,
+  "width": 300,
+  "title": {
+    "text": "Inflation",
+    "subtitle": " US CPI, annual change (%), source: FRED",
+    "subtitleFontStyle": "italic",
+    "subtitleFontSize": 10,
+    "anchor": "start",
+    "color": "black"
+  },
+  "data": {
+    "url": "https://api.allorigins.win/raw?url=https%3A%2F%2Fapi.stlouisfed.org%2Ffred%2Fseries%2Fobservations%3Fseries_id%3DFPCPITOTLZGUSA%26api_key%3D838a40e4f5a37b6b4d8c9cfc4b1abaff%26file_type%3Djson",
+    "format": {"type": "json", "property": "observations"}
+  },
+  "transform": [
+    {"calculate": "year(datum.date)", "as": "year"},
+    {"filter": "datum.year>=minYear"},
+    {"filter": "datum.year<=maxYear"}
+  ],
+  "params": [
+    {
+      "name": "minYear",
+      "value": 2000,
+      "bind": {
+        "input": "range",
+        "min": 1954,
+        "max": 2021,
+        "step": 1,
+        "name": "Start year:"
+      }
+    },
+    {
+      "name": "maxYear",
+      "value": 2022,
+      "bind": {
+        "input": "range",
+        "min": 1955,
+        "max": 2022,
+        "step": 1,
+        "name": "End year:"
+      }
+    }
+  ],
+  "mark": {"type": "line", "color": "steelblue"},
+  "encoding": {
+    "x": {
+      "field": "date",
+      "type": "temporal",
+      "title": null,
+      "axis": {"grid": false}
+    },
+    "y": {
+      "field": "value",
+      "type": "quantitative",
+      "title": null,
+      "axis": {"grid": false}
+    },
+    "tooltip": [
+      {"field": "date", "title": "Date", "type": "temporal"},
+      {"field": "value", "title": "Value"}
+    ]
+  }
+}
+  
+  
