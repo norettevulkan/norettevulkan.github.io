@@ -1,0 +1,83 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "This graph uses the data from the ONS API on employment rates in different regions of the UK. The aim is to show the gap between employment in the North and South of england. Note: ATM i only use SE, SW, NE and NW. Should this be improved?",
+  "height": 300,
+  "width": 300,
+  "title": {
+    "text": "North South divide: employment rates by region",
+    "subtitle": "United Kingdom (16-64) seasonally adjusted, Source: ONS",
+    "subtitleFontStyle": "italic",
+    "subtitleFontSize": 10,
+    "anchor": "start",
+    "color": "black"
+  },
+  "encoding": {
+    "x": {
+      "field": "date",
+      "type": "temporal",
+      "title": null,
+      "axis": {"grid": false}
+    },
+    "y": {
+      "field": "value",
+      "type": "quantitative",
+      "title": null,
+      "axis": {"grid": false}
+    }
+  },
+  "layer": [
+    {
+      "data": {
+        "url": "https://api.allorigins.win/raw?url=https://api.ons.gov.uk/timeseries/lf3p/dataset/lms/data",
+        "format": {"type": "json", "property": "years"}
+      },
+      "mark": {"type": "line", "color": "darkorange"},
+      "title": "North East emplotment rate",
+      "encoding": {
+        "tooltip": [
+          {"field": "date", "title": "Date", "type": "temporal"},
+          {"field": "value", "title": "North East employment rate"}
+        ]
+      }
+    },
+    {
+      "data": {
+        "url": "https://api.allorigins.win/raw?url=https://api.ons.gov.uk/timeseries/lf3x/dataset/lms/data",
+        "format": {"type": "json", "property": "years"}
+      },
+      "mark": {"type": "line", "color": "darkgreen"},
+      "encoding": {
+        "tooltip": [
+          {"field": "date", "title": "Date", "type": "temporal"},
+          {"field": "value", "title": "South West employment rate"}
+        ]
+      }
+    },
+    {
+      "data": {
+        "url": "https://api.allorigins.win/raw?url=https://api.ons.gov.uk/timeseries/lf3w/dataset/lms/data",
+        "format": {"type": "json", "property": "years"}
+      },
+      "mark": {"type": "line", "color": "forestgreen"},
+      "encoding": {
+        "tooltip": [
+          {"field": "date", "title": "Date", "type": "temporal"},
+          {"field": "value", "title": "South East employment rate"}
+        ]
+      }
+    },
+    {
+      "data": {
+        "url": "https://api.allorigins.win/raw?url=https://api.ons.gov.uk/timeseries/lf3q/dataset/lms/data",
+        "format": {"type": "json", "property": "years"}
+      },
+      "mark": {"type": "line", "color": "orange"},
+      "encoding": {
+        "tooltip": [
+          {"field": "date", "title": "Date", "type": "temporal"},
+          {"field": "value", "title": "North West employment rate"}
+        ]
+      }
+    }
+  ]
+}
