@@ -1,0 +1,50 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "This graph uses the 2 layes of ONS APIs showing the female and male u/e rate in the UK. It is interesting that they converge. I have used blue for male and pink for female",
+  "height": 300,
+  "width": 300,
+  "title": {
+    "text": "Employment rates by gender",
+    "subtitle": "United Kingdom (16+) seasonally adjusted, Source: ONS",
+    "subtitleFontStyle": "italic",
+    "subtitleFontSize": 10,
+    "anchor": "start",
+    "color": "black"
+  },
+  "encoding": {
+    "x": {
+      "field": "date",
+      "type": "temporal",
+      "title": null,
+      "axis": {"grid": false}
+    },
+    "y": {
+      "field": "value",
+      "type": "quantitative",
+      "title": null,
+      "axis": {"grid": false}
+    }
+  },
+  "layer": [
+    {
+      "data": {
+        "url": "https://api.allorigins.win/raw?url=https://api.ons.gov.uk/timeseries/mgsv/dataset/lms/data",
+        "format": {"type": "json","property": "years"}
+      },
+      "mark": {"type": "line", "color": "darkblue"},
+      "encoding": {"tooltip": [
+      {"field": "date", "title": "Date", "type": "temporal"},
+      {"field": "value", "title": "Male employment rate (%)"}
+    ]}
+    },
+    {
+      "data": {"url": "https://api.allorigins.win/raw?url=https://api.ons.gov.uk/timeseries/lf25/dataset/lms/data","format":{"type": "json", "property": "years"}
+      },
+      "mark": {"type": "line", "color": "hotpink"},
+            "encoding": {"tooltip": [
+      {"field": "date", "title": "Date", "type": "temporal"},
+      {"field": "value", "title": "Female employment rate (%)"}
+    ]}
+    }
+  ]
+}
