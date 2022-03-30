@@ -1,0 +1,64 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Unemployment in the UK",
+    "subtitle": "United Kingdom 16+ (thousands), seasonally adjusted, Source: ONS",
+    "subtitleFontStyle": "italic",
+    "subtitleFontSize": 10,
+    "anchor": "start",
+    "color": "black"
+  },
+  "width": 300,
+  "height": 300,
+  "data": {
+    "name": "myData",
+    "url": "https://api.allorigins.win/raw?url=https://api.ons.gov.uk/timeseries/mgsc/dataset/lms/data",
+    "format": {"type": "json", "property": "years"}
+  },
+  "mark": {
+    "type": "line",
+    "color": "blueviolet",
+    "strokeWidth": 2,
+    "opacity": 1
+  },
+  "transform": [
+    {"filter": "datum.year>minYear"},
+    {"filter": "datum.year<maxYear"}
+  ],
+  "params": [
+    {
+      "name": "minYear",
+      "value": 2000,
+      "bind": {
+        "input": "range",
+        "min": 1975,
+        "max": 2021,
+        "step": 1,
+        "name": "Start year:"
+      }
+    },
+    {
+      "name": "maxYear",
+      "value": 2021,
+      "bind": {
+        "input": "range",
+        "min": 1975,
+        "max": 2021,
+        "step": 1,
+        "name": "End year:"
+      }
+    }
+  ],
+  "encoding": {
+    "x": {"field": "date", "type": "temporal", "title": null},
+    "y": {
+      "field": "value",
+      "type": "quantitative",
+      "title":null
+    }
+    ,"tooltip": [
+      {"field": "date", "title": "Date", "type": "temporal"},
+      {"field": "value", "title": "Value"}
+    ]
+  }
+}
