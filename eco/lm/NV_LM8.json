@@ -1,0 +1,70 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "This graph uses the 2 layes of ONS APIs showing the u/e rates in the UK for 2 different age groups. It is interesting that they converge.It would be clearer if a label could be added to the lines, but I couldnt find a way to do this",
+  "height": 300,
+  "width": 300,
+  "title": {
+    "text": "Unemployment rates by age group",
+    "subtitle": "United Kingdom (%), seasonally adjusted, Source: ONS",
+    "subtitleFontStyle": "italic",
+    "subtitleFontSize": 10,
+    "anchor": "start",
+    "color": "black"
+  },
+  "config": {
+    "locale": {
+      "number": {
+        "decimal": ".",
+        "thousands": ",",
+        "grouping": [3],
+        "currency": ["", " %"]
+      }
+    }
+  },
+  "encoding": {
+    "x": {
+      "field": "date",
+      "type": "temporal",
+      "title": null,
+      "axis": {"grid": false}
+    },
+    "y": {
+      "field": "value",
+      "type": "quantitative",
+      "title": null,
+      "axis": {"grid": false}
+    }
+  },
+  "layer": [
+    {
+      "data": {
+        "url": "https://api.allorigins.win/raw?url=https://api.ons.gov.uk/timeseries/ybvq/dataset/lms/data",
+        "format": {"type": "json", "property": "years"}
+      },
+      "mark": {"type": "line", "color": "#36b7b4"},
+      "encoding": {
+        "tooltip": [
+          {"field": "date", "title": "Date", "type": "temporal"},
+          {"field": "value", "title": "Aged 18-24 unemployment rate", "format": "$.3s"}
+        ]
+      }
+    },
+    {
+      "data": {
+        "url": "https://api.allorigins.win/raw?url=https://api.ons.gov.uk/timeseries/mgxb/dataset/lms/data",
+        "format": {"type": "json", "property": "years"}
+      },
+      "mark": {"type": "line", "color": "#e6224b"},
+      "encoding": {
+        "tooltip": [
+          {"field": "date", "title": "Date", "type": "temporal"},
+          {
+            "field": "value",
+            "title": "Aged 25-49 unemployment rate ",
+            "format": "$.3s"
+          }
+        ]
+      }
+    }
+  ]
+}
