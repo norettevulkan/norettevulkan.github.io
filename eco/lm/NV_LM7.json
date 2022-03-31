@@ -1,0 +1,93 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Data is from world bank API. Graph aims to show differences in youth u/e rates across Europe. To improve: how could some sort of labels be added to the lines? ",
+  "height": 300,
+  "width": 300,
+  "title": {
+    "text": "Youth unemployment in Europe",
+    "subtitle": "% of total labour forces age 15-24, Source: World Bank",
+    "subtitleFontStyle": "italic",
+    "subtitleFontSize": 10,
+    "anchor": "start",
+    "color": "black"
+  },
+  "config": {
+    "locale": {
+      "number": {
+        "decimal": ".",
+        "thousands": ",",
+        "grouping": [3],
+        "currency": ["", " %"]
+      }
+    }},
+  "encoding": {
+    "x": {
+      "field": "date",
+      "type": "temporal",
+      "title": null,
+      "axis": {"grid": false}
+    },
+    "y": {
+      "field": "value",
+      "type": "quantitative",
+      "title": null,
+      "axis": {"grid": false}
+    }
+    , "color": {"field": "symbol", "type": "nominal"}
+  },
+  "layer": [
+    {
+      "data": {
+        "url": "https://api.factmaven.com/xml-to-json/?xml=https%3A%2F%2Fapi.worldbank.org%2Fv2%2Fcountry%2Fes%2Findicator%2FSL.UEM.1524.ZS%3Fdate%3D2000%3A2020",
+        "format": {"type": "json", "property": "data.data"}
+      },
+      "mark": {"type": "line", "color": "#122b39"},
+      "encoding": {                "color": {"type": "nominal", "field": "countryiso3code","title": "Country:"},
+
+        "tooltip": [
+          {"field": "date", "title": "Date", "type": "temporal"},
+          {"field": "value", "title": "Spain youth unemployment","format": "$.3s"}
+        ]
+      }
+    },
+    {
+      "data": {
+        "url": "https://api.factmaven.com/xml-to-json/?xml=https%3A%2F%2Fapi.worldbank.org%2Fv2%2Fcountry%2Fgb%2Findicator%2FSL.UEM.1524.ZS%3Fdate%3D2000%3A2020",
+        "format": {"type": "json", "property": "data.data"}
+      },
+      "mark": {"type": "line", "color": "#36b7b4"},
+      "encoding": {   "color": {"type": "nominal", "field": "countryiso3code"},
+        "tooltip": [
+          {"field": "date", "title": "Date", "type": "temporal"},
+          {"field": "value", "title": "UK youth unemployment","format": "$.3s"}
+        ]
+      }
+    },
+    {
+      "data": {
+        "url": "https://api.factmaven.com/xml-to-json/?xml=https%3A%2F%2Fapi.worldbank.org%2Fv2%2Fcountry%2Fde%2Findicator%2FSL.UEM.1524.ZS%3Fdate%3D2000%3A2020",
+        "format": {"type": "json", "property": "data.data"}
+      },
+      "mark": {"type": "line", "color": "#179fdb"},
+      "encoding": {   "color": {"type": "nominal", "field": "countryiso3code"},
+        "tooltip": [
+          {"field": "date", "title": "Date", "type": "temporal"},
+          {"field": "value", "title": "Germany youth unemployment","format": "$.3s"}
+        ]
+      }
+    },
+    {
+      "data": {
+        "url": "https://api.factmaven.com/xml-to-json/?xml=https%3A%2F%2Fapi.worldbank.org%2Fv2%2Fcountry%2Ffr%2Findicator%2FSL.UEM.1524.ZS%3Fdate%3D2000%3A2020",
+        "format": {"type": "json", "property": "data.data"}
+      },
+      "mark": {"type": "line", "color": "#5c267b "},
+      "encoding": {   "color": {"type": "nominal", "field": "countryiso3code"},
+        "tooltip": [
+          {"field": "date", "title": "Date", "type": "temporal"},
+          {"field": "value", "title": "France youth unemployment","format": "$.3s"}
+        ]
+      }
+    }
+  ]
+}
