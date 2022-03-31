@@ -17,7 +17,7 @@
   },
   "mark": {
     "type": "line",
-    "color": "blueviolet",
+    "color": "#5c267b",
     "strokeWidth": 2,
     "opacity": 1
   },
