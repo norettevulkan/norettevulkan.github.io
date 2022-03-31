@@ -1,0 +1,65 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "This interactive graph uses the ONS API to show the UK Employment rate. The chart has sliders and tooltips",
+  "title": {
+    "text": "UK employment rate (%)",
+    "subtitle": "16+ seasonally adjusted, Source: ONS",
+    "subtitleFontStyle": "italic",
+    "subtitleFontSize": 10,
+    "anchor": "start",
+    "color": "black"
+  },
+  "width": 300,
+  "height": 300,
+  "data": {
+    "name": "myData",
+    "url": "https://api.allorigins.win/raw?url=https://api.ons.gov.uk/timeseries/lf24/dataset/lms/data",
+    "format": {"type": "json", "property": "years"}
+  },
+  "mark": {
+    "type": "line",
+    "color": "#5c267b",
+    "strokeWidth": 2,
+    "opacity": 1
+  },
+  "transform": [
+    {"filter": "datum.year>minYear"},
+    {"filter": "datum.year<maxYear"}
+  ],
+  "params": [
+    {
+      "name": "minYear",
+      "value": 2000,
+      "bind": {
+        "input": "range",
+        "min": 1975,
+        "max": 2022,
+        "step": 1,
+        "name": "Start year:"
+      }
+    },
+    {
+      "name": "maxYear",
+      "value": 2022,
+      "bind": {
+        "input": "range",
+        "min": 1975,
+        "max": 2022,
+        "step": 1,
+        "name": "End year:"
+      }
+    }
+  ],
+  "encoding": {
+    "x": {"field": "date", "type": "temporal", "title": null},
+    "y": {
+      "field": "value",
+      "type": "quantitative",
+      "title": null,
+      "scale": {"domain": {"data": "myData", "field": "value"}}
+    }
+,"tooltip":[
+      {"field": "date", "title": "Date", "type": "temporal"},
+      {"field": "value", "title": "Value"}
+    ]  }
+}
