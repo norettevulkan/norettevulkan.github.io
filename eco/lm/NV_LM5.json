@@ -1,0 +1,52 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "This graph aims to show the affect of the COVID pandemic on the accomdation and food services industry. I have added a line to show 2020 where the pandemic hit",
+  "height": 300,
+  "width": 300,
+  "title": {
+    "text": "Vacancies in Accommodation & Food Services",
+    "subtitle": "UK Job Vacancies (thousands), Source: ONS",
+    "subtitleFontStyle": "italic",
+    "subtitleFontSize": 10,
+    "anchor": "start",
+    "color": "black"
+  },
+  "encoding": {
+    "x": {
+      "field": "date",
+      "type": "temporal",
+      "title": null,
+      "axis": {"grid": false}
+    },
+    "y": {
+      "field": "value",
+      "type": "quantitative",
+      "title": null,
+      "axis": {"grid": false}
+    }
+  },
+  "layer": [
+    {
+      "data": {
+        "url": "https://api.allorigins.win/raw?url=https://api.ons.gov.uk/timeseries/jp9o/dataset/unem/data",
+        "format": {"type": "json", "property": "months"}
+      },
+      "mark": {"type": "line", "color": "#5c267b "},
+      "encoding": {
+        "tooltip": [
+          {"field": "date", "title": "Date", "type": "temporal"},
+          {"field": "value", "title": "Vacancies (thousands)"}
+        ]
+      }
+    },
+          {"data": {
+        "values": [
+          {"date": "2020", "value": "180"},
+          {"date": "2020", "value": "0"}
+        ]
+      },
+      "mark": {"type": "line", "color": "#e6224b "}
+
+    }
+  ]
+}
