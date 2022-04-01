@@ -1,0 +1,134 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Data is from world bank API. Graph aims to show differences in youth u/e rates across Europe. To improve: how could some sort of labels be added to the lines? ",
+  "height": 300,
+  "width": 300,
+  "title": {
+    "text": "Unemployment rates across the world",
+    "subtitle": "% of total labour forces, modeled ILO estimate, Source: World Bank",
+    "subtitleFontStyle": "italic",
+    "subtitleFontSize": 10,
+    "anchor": "start",
+    "color": "black"
+  },
+  "config": {
+    "locale": {
+      "number": {
+        "decimal": ".",
+        "thousands": ",",
+        "grouping": [3],
+        "currency": ["", " %"]
+      }
+    }
+  },
+  "encoding": {
+    "x": {
+      "field": "date",
+      "type": "temporal",
+      "title": null,
+      "axis": {"grid": false}
+    },
+    "y": {
+      "field": "value",
+      "type": "quantitative",
+      "title": null,
+      "axis": {"grid": false}
+    },
+    "color": {"field": "symbol", "type": "nominal","scale":{"scheme":"set1"}}
+  },
+  "layer": [
+    {
+      "data": {
+        "url": "https://api.factmaven.com/xml-to-json/?xml=https%3A%2F%2Fapi.worldbank.org%2Fv2%2Fcountry%2Fru%2Findicator%2FSL.UEM.TOTL.ZS%3Fdate%3D1991%3A2020",
+        "format": {"type": "json", "property": "data.data"}
+      },
+      "mark": {"type": "line", "color": "#122b39"},
+      "encoding": {
+        "color": {
+          "type": "nominal",
+          "field": "countryiso3code",
+          "title": "Country:"
+        },
+        "tooltip": [
+          {"field": "date", "title": "Date", "type": "temporal"},
+          {
+            "field": "value",
+            "title": "Russia unemployment",
+            "format": "$.3s"
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "url": "https://api.factmaven.com/xml-to-json/?xml=https%3A%2F%2Fapi.worldbank.org%2Fv2%2Fcountry%2FZA%2Findicator%2FSL.UEM.TOTL.ZS%3Fdate%3D1991%3A2020",
+        "format": {"type": "json", "property": "data.data"}
+      },
+      "mark": {"type": "line", "color": "#36b7b4"},
+      "encoding": {
+        "color": {"type": "nominal", "field": "countryiso3code"},
+        "tooltip": [
+          {"field": "date", "title": "Date", "type": "temporal"},
+          {"field": "value", "title": "South Africa unemployment", "format": "$.3s"}
+        ]
+      }
+    },
+    {
+      "data": {
+        "url": "https://api.factmaven.com/xml-to-json/?xml=https%3A%2F%2Fapi.worldbank.org%2Fv2%2Fcountry%2FUS%2Findicator%2FSL.UEM.TOTL.ZS%3Fdate%3D1991%3A2020",
+        "format": {"type": "json", "property": "data.data"}
+      },
+      "mark": {"type": "line", "color": "#179fdb"},
+      "encoding": {
+        "color": {"type": "nominal", "field": "countryiso3code"},
+        "tooltip": [
+          {"field": "date", "title": "Date", "type": "temporal"},
+          {
+            "field": "value",
+            "title": "US unemployment",
+            "format": "$.3s"
+          }
+        ]
+      }
+    },
+    {
+      "data": {
+        "url": "https://api.factmaven.com/xml-to-json/?xml=https%3A%2F%2Fapi.worldbank.org%2Fv2%2Fcountry%2FGB%2Findicator%2FSL.UEM.TOTL.ZS%3Fdate%3D1991%3A2020",
+        "format": {"type": "json", "property": "data.data"}
+      },
+      "mark": {"type": "line", "color": "#5c267b "},
+      "encoding": {
+        "color": {"type": "nominal", "field": "countryiso3code"},
+        "tooltip": [
+          {"field": "date", "title": "Date", "type": "temporal"},
+          {
+            "field": "value",
+            "title": "UK unemployment",
+            "format": "$.3s"
+          }
+        ]
+      }
+    },{
+      "data": {
+        "url": "https://api.factmaven.com/xml-to-json/?xml=https%3A%2F%2Fapi.worldbank.org%2Fv2%2Fcountry%2Fgr%2Findicator%2FSL.UEM.TOTL.ZS%3Fdate%3D1991%3A2020",
+        "format": {"type": "json", "property": "data.data"}
+      },
+      "mark": {"type": "line", "color": "#122b39"},
+      "encoding": {
+        "color": {
+          "type": "nominal",
+          "field": "countryiso3code",
+          "title": "Country:"
+        },
+        "tooltip": [
+          {"field": "date", "title": "Date", "type": "temporal"},
+          {
+            "field": "value",
+            "title": "Greece unemployment",
+            "format": "$.3s"
+          }
+        ]
+      }
+    }
+  ]
+}
